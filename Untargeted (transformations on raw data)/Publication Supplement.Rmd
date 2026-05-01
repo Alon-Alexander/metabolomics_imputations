@@ -74,7 +74,7 @@ feature_table_CLR_standardized_merged_conditions
 ## RCLR Standardization, followed by imputation
 ### RCLR Standardization
 ```{r}
-feature_table_RCLR_standardized_merged_conditions = select(feature_table_merged_conditions, -Conditions) %>% decostand(method = "rclr")
+feature_table_RCLR_standardized_merged_conditions = select(feature_table_merged_conditions, -Conditions) %>% decostand(method = "rclr", impute = FALSE)
 feature_table_RCLR_standardized_merged_conditions
 
 feature_table_RCLR_standardized_merged_conditions = cbind(Conditions, feature_table_RCLR_standardized_merged_conditions)
